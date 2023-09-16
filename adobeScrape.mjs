@@ -47,11 +47,11 @@ async function fetchData(items, count) {
 var toProcess = [];
 var resultLinks = [];
 
-for (var i = 0; i < test.length; i++) {
-  var item = test[i];
+for (var i = 0; i < fileUrlsToDownload.length; i++) {
+  var item = fileUrlsToDownload[i];
   toProcess.push(item);
   
-  if ((i + 1) % 10 === 0 || (i + 1) === test.length) {
+  if ((i + 1) % 10 === 0 || (i + 1) === fileUrlsToDownload.length) {
     const result = await fetchData(toProcess, i);
     resultLinks.push(result);
     toProcess = [];
